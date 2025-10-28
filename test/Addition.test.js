@@ -1,7 +1,7 @@
-import {add} from '../Calculator.js';
+import {add} from '../Addition.js';
 import {expect,assert,should} from 'chai';
 should();
-describe('Calculator',() =>{
+describe('Addition',() =>{
     describe('add assert style',()=>{
         it('returns sum',()=>{
             assert.equal(add(2,3),5,'Should return 5');
