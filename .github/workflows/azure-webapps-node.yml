@@ -12,42 +12,39 @@ on:
 
 jobs:
 
-  build-test:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout repository
+      - name: Build Project
 
-        uses: actions/checkout@v4
+        run: echo "Hello, GitHub Actions!"
 
-      - name: Setup Node.js
+      - name: Set an environment variable
 
-        uses: actions/setup-node@v4
+        run: echo "MY_VAR=example_value" >> $GITHUB_ENV
 
-        with:
+      - name: Use the environment variable
 
-          node-version: 20
+        run: echo "The value of MY_VAR is $MY_VAR"
+        
+test:
 
-      - name: Install dependencies
+    runs-on: ubuntu-latest
 
-        run: npm ci
+    steps:
 
-      - name: Build project
+      - name: Test Project
 
-        run: npm run build
+        run: echo "Hello, GitHub Actions!"
 
-      - name: Run tests with coverage
+      - name: Set an environment variable
 
-        run: npm test
+        run: echo "MY_VAR=example_value" >> $GITHUB_ENV
 
-      - name: Upload coverage report
+      - name: Use the environment variable
 
-        uses: actions/upload-artifact@v4
+        run: echo "The value of MY_VAR is $MY_VAR"
 
-        with:
-
-          name: code-coverage-report
-
-          path: coverage
