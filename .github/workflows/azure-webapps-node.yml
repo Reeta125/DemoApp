@@ -1,4 +1,4 @@
-name: Build, Test, and Code Coverage
+name: CI CD Pipeline
 
 on:
 
@@ -47,4 +47,8 @@ jobs:
       - name: Use the environment variable
 
         run: echo "The value of MY_VAR is $MY_VAR"
+
+
+ 
+
 
