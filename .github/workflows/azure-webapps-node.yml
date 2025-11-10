@@ -30,7 +30,7 @@ jobs:
 
         run: echo "The value of MY_VAR is $MY_VAR"
         
-test:
+  test-job:
 
     runs-on: ubuntu-latest
 
